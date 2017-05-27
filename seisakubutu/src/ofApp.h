@@ -23,4 +23,7 @@ class ofApp : public ofBaseApp{
 		
 		ofVec2f mPosition;
 		ofVec2f mVelocity;
+		ofImage sakura;
+		ofImage haikei;
+		bool isshowsakura;
 };
