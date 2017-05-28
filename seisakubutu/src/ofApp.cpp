@@ -14,28 +14,34 @@ void ofApp::setup(){
 	mVelocity = ofVec2f(vx, vy);
 
     isshowsakura = false;
-	haikei.load ("ètÇÃîwåi.png");
+	haikei.load ("haikei.png");
 	sakura.load("thEBQL02EH.jpg");
 
 }
 
 //--------------------------------------------------------------
-void ofApp::update(){
-
+void ofApp::update(bool isMousePressed){
+	float mouseX = ofGetMouseX();
+	float mouseY = ofGetMouseY();
+	ofVec2f mousePosition = ofVec2f(mouseX, mouseY);
+	mVelocity.y += gravity;
+	mVelocity *= friction;
+	mPosition += mVelocity;
 }
 
 //--------------------------------------------------------------
 void ofApp::draw() {
 
-
+	
+		
+	haikei.draw(0, 0);
 	if (isshowsakura) {
-		haikei.draw(0, 0);
 		sakura.draw(mouseX, mouseY, 50, 50);
 		sakura.draw(mouseX, mouseY + 50, 50, 50);
 		sakura.draw(mouseX + 50, mouseY, 50, 50);
 		sakura.draw(mouseX + 50, mouseY + 50, 50, 50);
-		sakura.draw(mPosition, 10);
 	}
+	
 
 }
 //--------------------------------------------------------------
@@ -66,6 +72,8 @@ void ofApp::mousePressed(int x, int y, int button){
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
 	isshowsakura = false;
+	isshowsakura = true;
+	mVelocity = ofVec2f(0, gravity);
 }
 
 //--------------------------------------------------------------

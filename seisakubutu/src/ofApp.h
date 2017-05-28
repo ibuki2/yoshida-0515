@@ -6,7 +6,7 @@ class ofApp : public ofBaseApp{
 
 	public:
 		void setup();
-		void update();
+		void update(bool isMousePressed);
 		void draw();
 
 		void keyPressed(int key);
@@ -26,4 +26,6 @@ class ofApp : public ofBaseApp{
 		ofImage sakura;
 		ofImage haikei;
 		bool isshowsakura;
+		constexpr static float gravity = 0.098;
+		constexpr static float friction = 0.999;
 };
