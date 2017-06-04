@@ -20,12 +20,16 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+		void update();
 		
 		ofVec2f mPosition;
 		ofVec2f mVelocity;
 		ofImage sakura;
 		ofImage haikei;
 		bool isshowsakura;
-		constexpr static float gravity = 0.098;
-		constexpr static float friction = 0.999;
+		bool isreleasesakura;
+		constexpr static const float gravity = 0.0098;
+		constexpr static const float friction = 0.999;
+		int i = 1;
+		int j = i+1;
 };
